@@ -135,9 +135,9 @@ export default function ImageGallery() {
   const y = useTransform(scrollYProgress, [0, 1], [0, height * 2])
   const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3])
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
-  const y5 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
-  const y6 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 2.25])
+  const y5 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3])
+  const y6 = useTransform(scrollYProgress, [0, 1], [0, height * 1.15])
 
   useEffect( () => {
     const lenis = new Lenis()
@@ -167,9 +167,9 @@ export default function ImageGallery() {
         <Column images={[images[0], images[1], images[2]]} y={y}/>
         <Column images={[images[3], images[4], images[5]]} y={y2}/>
         <Column images={[images[6], images[7], images[8]]} y={y3}/>
-        <Column images={[images[9], images[10], images[11]]} y={y4}/>
-        <Column images={[images[12], images[13], images[14]]} y={y5}/>
-        <Column images={[images[15], images[16], images[17]]} y={y6}/>
+        <Column images={[images[9], images[10], images[11]]} y={y}/>
+        <Column images={[images[12], images[13], images[14]]} y={y2}/>
+        <Column images={[images[15], images[16], images[17]]} y={y3}/>
       </div>
       <div className={styles.spacer}></div>
     </main>
