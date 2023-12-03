@@ -42,11 +42,7 @@ const About = () => {
                 "Addionally, I have been trying to work with front-end tools like React and Next.js. For example, this site is built with Next.js."
               }
             />
-            <AnimatedBody
-              text={
-                "Besides this, I have interests in the field of computer science and cyber security. For bla bla bla"
-              }
-            />
+        
           </div>
 
           <div className="mb-24 flex w-[100%] flex-col gap-4 text-[18px] font-normal leading-relaxed tracking-wide text-[#e4ded7]/80 sm:mb-32 md:mb-40 md:gap-6 md:text-[16px] md:leading-normal lg:mt-0 lg:mb-16 lg:max-w-[30%] lg:text-[18px]">
