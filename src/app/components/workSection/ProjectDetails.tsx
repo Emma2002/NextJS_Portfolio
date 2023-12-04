@@ -6,6 +6,7 @@ export type ProjectProps = {
     // github: string;
     // demo: string;
     image: string;
+    video: string;
     available: boolean;
   };
   
@@ -30,7 +31,8 @@ export type ProjectProps = {
       // github: "",
       // demo: "",
       image: require("../../../../public/images/Projects/Module8_3.jpg"),
-      available: true,
+        video: "../../../../public/images/Projects/Videos/Module8.mp4",
+      available: false,
     },
     // {
     //   id: 2,

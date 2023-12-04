@@ -3,6 +3,11 @@ import Image from "next/image";
 import AnimatedTitle from "../animations/AnimatedTitle";
 import AnimatedBody from "../animations/AnimatedBody";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { BiLoaderAlt } from 'react-icons/bi';
+import { IoCloseOutline } from 'react-icons/io5';
+import "./video.css";
+
 
 const ProjectCard = ({
   id,
@@ -10,8 +15,20 @@ const ProjectCard = ({
   description,
   technologies,
   image,
+  video,
   available,
 }: ProjectProps) => {
+  const [modal, setModal] = useState(false);
+  const [videoLoading, setVideoLoading] = useState(true);
+
+  const openModal = () => {
+    setModal(!modal);
+  };
+
+  const spinner = () => {
+    setVideoLoading(!videoLoading);
+  };
+
   return (
     <motion.div
       style={{
@@ -28,8 +45,10 @@ const ProjectCard = ({
       <Image
         src={image}
         alt={name}
-        className={`absolute -bottom-2 w-[70%] sm:w-[85%] md:w-[60%] lg:max-w-[55%] ${
-          id % 2 === 0 ? "right-0" : "left-0"
+        layout="responsive"
+        loading="eager"
+       className={`absolute -bottom-2 w-[70%] sm:w-[85%] md:w-[60%] lg:max-w-[55%] ${
+        id % 2 === 0 ? "right-0" : "left-0"
         }`}
       />
       <div
@@ -38,15 +57,54 @@ const ProjectCard = ({
         } mt-6 flex  items-center justify-center gap-4 lg:mt-10`}
       >
         {!available && (
+          <button onClick={openModal}>
           <div className=" flex items-center justify-center gap-4">
             <div className=" rounded-xl bg-white px-4 py-2 md:px-5 md:py-3 lg:px-6 lg:py-4">
               <h3 className="text-[16px] md:text-[18px] lg:text-[20px] ">
-                Coming soon
+                Watch video
               </h3>
             </div>
           </div>
+          </button>
         )}
       </div>
+
+
+      {modal && video && (
+        <section className="modal__bg">
+          <div className="modal__align">
+            <div className="modal__content">
+              <IoCloseOutline
+                className="modal__close"
+                aria-label="Close modal"
+                onClick={() => setModal(false)}
+              />
+              <div className="modal__video-align">
+                {videoLoading ? (
+                  <div className="modal__spinner">
+                    <BiLoaderAlt
+                      className="modal__spinner-style"
+                      // fadeIn="none"
+                    />
+                  </div>
+                ) : null}
+                <video
+                  className="modal__video-style"
+                  onLoad={spinner}
+                  width="800"
+                  height="500"
+                  controls
+                >
+                  <source src={video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+
       <div
         className={`absolute text-white  ${
           !(id % 2 === 0)
