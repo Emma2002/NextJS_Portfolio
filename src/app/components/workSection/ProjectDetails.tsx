@@ -4,7 +4,7 @@ export type ProjectProps = {
     description: string;
     technologies: string[];
     // github: string;
-    // demo: string;
+    demo: string;
     image: string;
     video: string;
     available: boolean;
@@ -18,7 +18,7 @@ export type ProjectProps = {
           "Project of module 4 OILY MONEY: THE ATM FROM HELL, displayed at the GogBot festival in 2022. This project was created with a total of 8 people.",
         technologies: ["Blender", "Processing"],
         // github: "",
-        // demo: "",
+        demo: "",
         image: require("../../../../public/images/Projects/GogBot.jpg"),
         available: true,
       },
@@ -29,22 +29,21 @@ export type ProjectProps = {
         "This project visually represents the negative impact of social media addiction on dopamine receptors through an installation. Using LED strips pulsing in real-time with screen taps, it communicates the importance of alternative activities, like playing sports or music. The installation won the Creative Technology Module 8 Craftsmanship Award. A total of 12 people worked on this project.",
       technologies: ["Arduino"],
       // github: "",
-      // demo: "",
+      demo: "",
       image: require("../../../../public/images/Projects/Module8_3.jpg"),
         video: "../../../../public/images/Projects/Videos/Module8.mp4",
       available: false,
     },
-    // {
-    //   id: 2,
-    //   name: "Alpaca Image Generator",
-    //   description:
-    //     "An image generator website that allows users to generate, combine, and download images.",
-    //   technologies: ["React", "CSS", "Merge Images"],
-    //   github: "https://github.com/victorcodess/alpaca-image-generator",
-    //   demo: "http://alpaca-image-generator-beta.vercel.app",
-    //   image: require(".//../../public/projects/alpaca-new.webp"),
-    //   available: true,
-    // },
+    {
+      id: 2,
+      name: "Professional Development Journey",
+      description:
+        "At the end of my 2 years of Creative Technology, I had to create a final project. I did it by creating a island about all professional journey of the last two years.",
+      technologies: ["ThreeJS", "Blender"],
+      demo: "https://emma2002.github.io/ProfDevJourney/",
+      image: require("../../../../public/images/Projects/ProfDev.png"),
+      available: true,
+    },
     // {
     //   id: 3,
     //   name: "Link Shortener",

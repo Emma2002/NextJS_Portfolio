@@ -6,6 +6,11 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { BiLoaderAlt } from 'react-icons/bi';
 import { IoCloseOutline } from 'react-icons/io5';
+import { IoPlayCircleSharp } from "react-icons/io5";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLink} from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 import "./video.css";
 
 
@@ -14,6 +19,7 @@ const ProjectCard = ({
   name,
   description,
   technologies,
+  demo,
   image,
   video,
   available,
@@ -32,7 +38,7 @@ const ProjectCard = ({
   return (
     <motion.div
       style={{
-        backgroundColor: "#212531",
+        backgroundColor: "#212121",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center center",
@@ -47,28 +53,55 @@ const ProjectCard = ({
         alt={name}
         layout="responsive"
         loading="eager"
-       className={`absolute -bottom-2 w-[70%] sm:w-[85%] md:w-[60%] lg:max-w-[55%] ${
-        id % 2 === 0 ? "right-0" : "left-0"
-        }`}
+      //  className={`absolute -bottom-2 w-[70%] sm:w-[85%] md:w-[60%] lg:max-w-[55%] ${
+      //   id % 2 === 0 ? "right-0" : "left-0"
+      //   }`}
+        className={`absolute -bottom-2 w-full sm:w-[85%] md:w-[60%] lg:max-w-[55%] ${
+          id % 2 === 0 ? "right-0" : "left-0"
+          }`}
+        // className={`absolute -bottom-2 w-full lg:max-w-[55%] ${
+        //   id % 2 === 0 ? "right-0" : "left-0"
+        //   }`}
       />
-      <div
-        className={`absolute text-[#0E1016] ${
-          id % 2 === 0 ? "left-0 ml-8 lg:ml-14" : "right-0 mr-8 lg:mr-14"
-        } mt-6 flex  items-center justify-center gap-4 lg:mt-10`}
-      >
-        {!available && (
-          <button onClick={openModal}>
-          <div className=" flex items-center justify-center gap-4">
-            <div className=" rounded-xl bg-white px-4 py-2 md:px-5 md:py-3 lg:px-6 lg:py-4">
-              <h3 className="text-[16px] md:text-[18px] lg:text-[20px] ">
-                Watch video
-              </h3>
-            </div>
-          </div>
-          </button>
-        )}
-      </div>
 
+
+{video && (
+        <button
+          onClick={openModal}
+          className="focus:outline-none absolute"
+          style={{
+            top: "50%",
+            left: "50%",
+            transform: "translate(-225%, -50%)",
+          }}
+        >
+          <div className="flex items-center justify-center gap-4">
+            <h3 className="text-[16px] md:text-[18px] lg:text-[20px] ">
+              <div className="rounded-full bg-white ">
+                <IoPlayCircleSharp size={150} color="#000" />
+              </div>
+            </h3>
+          </div>
+        </button>
+      )}
+
+      {demo && (
+        <div className="absolute top-0 text-[#0E1016] left-0 ml-8 lg:ml-14 mt-6 flex items-center justify-center gap-4 lg:mt-10">
+          <Link
+            href={demo}
+            target="_blank"
+            className="rounded-full"
+            aria-label="Open Live Demo"
+          >
+            <FontAwesomeIcon
+              icon={faLink}
+              className="w-[20px] rounded-full bg-white p-5 text-[20px] md:w-[25px] md:text-[24px] lg:w-[30px] lg:text-[28px]"
+            />
+          </Link>
+        </div>
+      )}
+        
+  
 
       {modal && video && (
         <section className="modal__bg">
