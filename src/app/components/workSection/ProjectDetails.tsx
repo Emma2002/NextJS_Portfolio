@@ -31,7 +31,7 @@ export type ProjectProps = {
       // github: "",
       demo: "",
       image: require("../../../../public/images/Projects/Module8_3.jpg"),
-        video: "../../../../public/images/Projects/Videos/Module8.mp4",
+        video: "/images/Projects/Videos/Module8.mp4",
       available: false,
     },
     {
@@ -79,7 +79,7 @@ export type ProjectProps = {
     // },
   ];
   
-  export const designProjects = [
+  export const otherProjects = [
     {
       id: 1,
       name: "Instagram promotion poster S.A. Proto",

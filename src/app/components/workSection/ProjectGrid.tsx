@@ -1,6 +1,6 @@
 "use client"
 import ProjectCard from "./ProjectCard";
-import { universityProjects, designProjects, ProjectProps } from "./ProjectDetails";
+import { universityProjects, otherProjects, ProjectProps } from "./ProjectDetails";
 import { useState } from "react";
 
 const ProjectGrid = () => {
@@ -22,9 +22,9 @@ const ProjectGrid = () => {
           className={`text-[16px] md:text-[20px] lg:text-[24px] ${
             filter ? "text-[#e4ded7]/30" : "text-[#e4ded7]"
           }`}
-          onClick={() => setFilter("design")}
+          onClick={() => setFilter("other")}
         >
-          Design
+          Other
         </h4>
       </div>
 
@@ -35,8 +35,8 @@ const ProjectGrid = () => {
             universityProjects.map((project: ProjectProps) => (
               <ProjectCard key={project.id} {...project} />
             ))}
-          {filter === "design" &&
-            designProjects.map((project: ProjectProps) => (
+          {filter === "other" &&
+            otherProjects.map((project: ProjectProps) => (
               <ProjectCard key={project.id} {...project} />
             ))}
         </div>
