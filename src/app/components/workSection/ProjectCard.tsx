@@ -72,8 +72,9 @@ const ProjectCard = ({
           style={{
             top: "50%",
             left: "50%",
-            transform: "translate(-225%, -50%)",
-          }}
+            transform: `translate(${id % 2 === 0 ? "0%" : "150%"}, -50%)`, // Adjust the translate value
+    [id % 2 === 0 ? "right" : "left"]: "5%", // Adjust the percentage value
+  }}
         >
           <div className="flex items-center justify-center gap-4">
             <h3 className="text-[16px] md:text-[18px] lg:text-[20px] ">

@@ -20,6 +20,7 @@ export type ProjectProps = {
         // github: "",
         demo: "",
         image: require("../../../../public/images/Projects/GogBot.jpg"),
+        video: "/images/Projects/Videos/Module4.mp4",
         available: true,
       },
     {
@@ -31,7 +32,7 @@ export type ProjectProps = {
       // github: "",
       demo: "",
       image: require("../../../../public/images/Projects/Module8_3.jpg"),
-        video: "/images/Projects/Videos/Module8.mp4",
+      video: "/images/Projects/Videos/Module8.mp4",
       available: false,
     },
     {
@@ -42,6 +43,17 @@ export type ProjectProps = {
       technologies: ["ThreeJS", "Blender"],
       demo: "https://emma2002.github.io/ProfDevJourney/",
       image: require("../../../../public/images/Projects/ProfDev.png"),
+      available: true,
+    },
+    {
+      id: 2,
+      name: "Night At The Arcade",
+      description:
+        "Game made in Unity for module 5, toghether with my project partner. During this module I learned about 3D modelling, 3D animation, Sound Engineering, Game Design and Unity, which all contributed to the development of this game where you must escape a haunted arcade by solving puzzles.",
+      technologies: ["Unity", "Blender", "FMOD"],
+      // demo: "https://emma2002.github.io/ProfDevJourney/",
+      image: require("../../../../public/images/Projects/Module5_logo.png"),
+      video: "/images/Projects/Videos/Module5.mp4",
       available: true,
     },
     // {
