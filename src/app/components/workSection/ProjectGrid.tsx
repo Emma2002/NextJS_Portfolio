@@ -20,7 +20,7 @@ const ProjectGrid = () => {
         </h4>{" "}
         <h4
           className={`text-[16px] md:text-[20px] lg:text-[24px] ${
-            filter ? "text-[#e4ded7]/30" : "text-[#e4ded7]"
+            filter === "other" ? "text-[#e4ded7]" : "text-[#e4ded7]/30"
           }`}
           onClick={() => setFilter("other")}
         >
