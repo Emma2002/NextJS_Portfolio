@@ -120,6 +120,7 @@ const images = [
   "16.png",
   "17.png",
   "18.png",
+  "19.png",
 ]
 
 export default function ImageGallery() {
@@ -169,7 +170,8 @@ export default function ImageGallery() {
         <Column images={[images[6], images[7], images[8]]} y={y3}/>
         <Column images={[images[9], images[10], images[11]]} y={y}/>
         <Column images={[images[12], images[13], images[14]]} y={y2}/>
-        <Column images={[images[15], images[16], images[17]]} y={y3}/>
+        <Column images={[images[15], images[16], images[17]]} y={y2}/>
+        
       </div>
       <div className={styles.spacer}></div>
     </main>

@@ -1,4 +1,3 @@
-
 "use client"
 import TopSection from "./components/TopSection"
 import ImageGallery from "./components/ImageGallery"
