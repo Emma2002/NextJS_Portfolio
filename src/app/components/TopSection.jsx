@@ -5,7 +5,7 @@ import { useRef, useEffect } from 'react';
 
 export default function TopSection() {
   return (
-    <main className={`${styles.main} relative flex flex-col items-center justify-center`}>
+    <main id="home" className={`${styles.main} relative flex flex-col items-center justify-center`}>
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
       <div className="absolute inset-0 filter blur-xl" style={{ transform: 'scale(1.1)' }}>
