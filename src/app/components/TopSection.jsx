@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import styles from '../page.module.css'
 import { useRef, useEffect } from 'react';
+import AnimatedTitle from "./animations/AnimatedTitle";
+import AnimatedBody from "./animations/AnimatedBody"; // If needed
 
 export default function TopSection() {
   return (
@@ -22,7 +24,9 @@ export default function TopSection() {
 <div className="relative text-center z-10 mt-28"> {/* Increased margin top for the hero section */}
   {/* Use flexbox to center and align the name */}
   <div className="absolute inset-0 flex items-center justify-center">
-    <div className="text-9xl text-white font-bold">EMMA VAN&nbsp;DEN BROEK</div> {/* Increased font size to text-12xl */}
+
+    <div className="text-9xl text-white font-bold">EMMA VAN&nbsp;DEN BROEK</div> 
+
   </div>
 </div>
 {/* Headshot Image */}
