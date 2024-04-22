@@ -1,8 +1,27 @@
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const NavBar = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleScroll = (e) => {
     e.preventDefault();
     const href = e.currentTarget.href;
@@ -15,13 +34,13 @@ const NavBar = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 flex flex-wrap items-center justify-between backdrop-blur-md px-4 py-2"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      style={{ textAlign: "center" }} // Apply text-align: center
+      className={`fixed top-0 left-0 right-0 z-50 flex flex-wrap items-center justify-between backdrop-blur-md px-4 py-2 transition-transform duration-300 ${
+        isVisible ? "transform translate-y-0" : "transform -translate-y-full"
+      }`}
+      style={{ textAlign: "center", fontFamily: "" }}
     >
       <div className="flex items-center justify-center flex-grow">
-        <div className="flex items-center navbar-nav" style={{ marginLeft: "150px" }}> {/* Add style for margin */}
+        <div className="flex items-center navbar-nav" style={{ marginLeft: "150px" }}>
           <Link
             href="#home"
             data-blobity-magnetic="false"
