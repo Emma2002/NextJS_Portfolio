@@ -103,6 +103,18 @@ export type ProjectProps = {
       image: require("../../../../public/images/Projects/ProtoInsta.png"),
       available: true,
     },
+
+    {
+      id: 1,
+      name: "Game Jam Game",
+      description:
+        "In a GameJam with the theme \"In a heartbeat\" me and two of my teammates created this game.You play as a red blood cell inside a human body. You have 10 heartbeats to prevent the heart from dying. If you use all 10 heartbeats, you will respawn to the start and your heartbeats reset. Try to find a way to finish all quests in the 10 heartbeat limit. ",
+      technologies: ["Unity", "Blender", "Photoshop"],
+      // github: "",
+      demo: "https://wilkuu.itch.io/affoe-the-heart-attack-game",
+      image: require("../../../../public/images/Projects/AffoeGameJam.png"),
+      available: true,
+    },
     // {
     //   id: 2,
     //   name: "RAGS Scrubs Website",
