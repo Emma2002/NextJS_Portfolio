@@ -1,4 +1,5 @@
 "use client"
+import Head from 'next/head'
 import TopSection from "./components/TopSection"
 import ImageGallery from "./components/ImageGallery"
 import About from "./components/About"
@@ -11,6 +12,9 @@ import NavBar from "./components/NavBar.jsx";
 export default function Home() {
   return (
     <>
+    <Head>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
      <NavBar />
       <TopSection/>
       <About/>

@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard";
 import { universityProjects, otherProjects, ProjectProps } from "./ProjectDetails";
 import { useState } from "react";
 
+
 const ProjectGrid = () => {
   // const [filter, setFilter] = useState(true);
   const [filter, setFilter] = useState("university");

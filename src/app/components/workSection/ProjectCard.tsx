@@ -3,7 +3,7 @@ import Image from "next/image";
 import AnimatedTitle from "../animations/AnimatedTitle";
 import AnimatedBody from "../animations/AnimatedBody";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { BiLoaderAlt } from 'react-icons/bi';
 import { IoCloseOutline } from 'react-icons/io5';
 import { IoPlayCircleSharp } from "react-icons/io5";
@@ -27,13 +27,25 @@ const ProjectCard = ({
   const [modal, setModal] = useState(false);
   const [videoLoading, setVideoLoading] = useState(true);
 
+
+  
+
+  const closeModal = () => {
+    setModal(false);
+    // Remove overflow hidden from body when modal is closed
+    document.body.style.overflow = 'auto';
+  };
+
   const openModal = () => {
     setModal(!modal);
+    document.body.style.overflow = 'hidden';
   };
 
   const spinner = () => {
     setVideoLoading(!videoLoading);
   };
+
+  
 
   return (
     <motion.div
@@ -56,7 +68,7 @@ const ProjectCard = ({
       //  className={`absolute -bottom-2 w-[70%] sm:w-[85%] md:w-[60%] lg:max-w-[55%] ${
       //   id % 2 === 0 ? "right-0" : "left-0"
       //   }`}
-        className={`absolute -bottom-2 w-full sm:w-[85%] md:w-[60%] lg:max-w-[55%] ${
+        className={`absolute -bottom-2 w-full sm:w-[85%] md:w-[60%] lg:max-w-[55%] rounded-xl overflow-hidden ${
           id % 2 === 0 ? "right-0" : "left-0"
           }`}
         // className={`absolute -bottom-2 w-full lg:max-w-[55%] ${
@@ -111,7 +123,7 @@ const ProjectCard = ({
               <IoCloseOutline
                 className="modal__close"
                 aria-label="Close modal"
-                onClick={() => setModal(false)}
+                onClick={closeModal}
               />
               <div className="modal__video-align">
                 {videoLoading ? (

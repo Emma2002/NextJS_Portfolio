@@ -41,6 +41,7 @@
     background: transparent;
     color: #000;
     margin: 0rem 4rem;
+
   }
   
   .modal__close {
@@ -78,6 +79,11 @@
     font-size: 40px;
     color: #1b6aae;
   }
+  .modal-open {
+    overflow: hidden;
+    position: fixed;
+  }
+
   
   @keyframes spin {
     0% {
