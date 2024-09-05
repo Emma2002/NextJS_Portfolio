@@ -11,18 +11,17 @@ export type ProjectProps = {
   };
   
   export const universityProjects = [
-      {
-        id: 0,
-        name: "GogBot Installation",
-        description:
-          "Project of module 4 OILY MONEY: THE ATM FROM HELL, displayed at the GogBot festival in 2022. This project was created with a total of 8 people.",
-        technologies: ["Blender", "Processing"],
-        // github: "",
-        demo: "",
-        image: require("../../../../public/images/Projects/GogBot.jpg"),
-        video: "/images/Projects/Videos/Module4.mp4",
-        available: true,
-      },
+    {
+      id: 4,
+      name: "Dots and Boxes",
+      description:
+        "For my minor elective in computer science, my teammate and I developed a multiplayer Dots and Boxes game in Java, using a client-server architecture. Players could either compete against each other or challenge an AI with adjustable difficulty levels. The game ran  in the terminal.",
+      technologies: ["Java", "IntelliJ"],
+      // demo: "https://emma2002.github.io/ProfDevJourney/",
+      image: require("../../../../public/images/Projects/DotsAndBoxes.png"),
+      // video: "/images/Projects/Videos/Module5.mp4",
+      available: false,
+    },
     {
       id: 1,
       name: "Brain Drain",
@@ -35,6 +34,8 @@ export type ProjectProps = {
       video: "/images/Projects/Videos/Module8.mp4",
       available: false,
     },
+     
+  
     {
       id: 2,
       name: "Professional Development Journey",
@@ -46,7 +47,7 @@ export type ProjectProps = {
       available: true,
     },
     {
-      id: 2,
+      id: 3,
       name: "Night At The Arcade",
       description:
         "Game made in Unity for module 5, toghether with my project partner. During this module I learned about 3D modelling, 3D animation, Sound Engineering, Game Design and Unity, which all contributed to the development of this game where you must escape a haunted arcade by solving puzzles.",
@@ -56,6 +57,21 @@ export type ProjectProps = {
       video: "/images/Projects/Videos/Module5.mp4",
       available: true,
     },
+
+    {
+      id: 0,
+      name: "GogBot Installation",
+      description:
+        "Project of module 4 OILY MONEY: THE ATM FROM HELL, displayed at the GogBot festival in 2022. This project was created with a total of 8 people.",
+      technologies: ["Blender", "Processing"],
+      // github: "",
+      demo: "",
+      image: require("../../../../public/images/Projects/GogBot.jpg"),
+      video: "/images/Projects/Videos/Module4.mp4",
+      available: true,
+    },  
+
+   
     // {
     //   id: 3,
     //   name: "Link Shortener",

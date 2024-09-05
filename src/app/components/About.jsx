@@ -27,6 +27,9 @@ const About = () => {
                 "I live in the Netherlands and I am currently pursuing my bachelor's degree in Creative Technology at the University of Twente. As someone who is interested in both technology and art, this is the perfect fit for me."
               }
             />
+
+            
+
             <AnimatedBody
               text={
                 "During my Creative Technology studies, I have the opportunity to learn a wide range of skills, including programming, design, prototyping and User Experience research."
@@ -37,12 +40,7 @@ const About = () => {
                 "I like 3D modelling, which allows me to bring my ideas to life in a digital space. I also enjoy graphic design and find great satisfaction in creating visually appealing designs. In addition to these creative pursuits, I enjoy learning about new technologies and how they can be used to solve problems."
               }
             />
-            <AnimatedBody
-              text={
-                "Addionally, I have been trying to work with front-end tools like React and Next.js. For example, this site is built with Next.js."
-              }
-            />
-        
+                  
           </div>
 
           <div className="mb-24 flex w-[100%] flex-col gap-4 text-[18px] font-normal leading-relaxed tracking-wide text-[#e4ded7]/80 sm:mb-32 md:mb-40 md:gap-6 md:text-[16px] md:leading-normal lg:mt-0 lg:mb-16 lg:max-w-[30%] lg:text-[18px]">
