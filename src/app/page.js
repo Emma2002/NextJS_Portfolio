@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import NavBar from "./components/NavBar.jsx"; 
 
 
+
 export default function Home() {
   return (
     <>

@@ -7,6 +7,10 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Portfolio Emma',
   description: 'Portfolio website of Emma',
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function RootLayout({ children }) {
