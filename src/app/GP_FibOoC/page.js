@@ -4,9 +4,6 @@ import React from 'react';
 const GP_FibOoC = () => {
   return (
     <div>
-        <Head>
-              <meta name="robots" content="noindex, nofollow" />
-        </Head>
       <h1>Graduation Project FibOoC</h1>
       <p>Here you can see the game</p>
       <iframe frameborder="0" src="https://itch.io/embed/3260496" width="552" height="167">
