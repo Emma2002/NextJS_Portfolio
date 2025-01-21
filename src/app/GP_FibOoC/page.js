@@ -1,9 +1,19 @@
-import React from 'react'
+
+import React from 'react';
+
 const GP_FibOoC = () => {
   return (
     <div>
+        <Head>
+              <meta name="robots" content="noindex, nofollow" />
+        </Head>
       <h1>Graduation Project FibOoC</h1>
-      <p>This is a test page for the Unity game. The game will appear here later!</p>
+      <p>Here you can see the game</p>
+      <iframe frameborder="0" src="https://itch.io/embed/3260496" width="552" height="167">
+        <a href="https://emmavdb2.itch.io/visualisation-tool-for-an-organ-on-a-chip-model-of-fibrotic-diseases">
+          Visualisation tool for an organ-on-a-chip model of fibrotic diseases by Emmavdb2
+        </a>
+      </iframe>
     </div>
   );
 };
