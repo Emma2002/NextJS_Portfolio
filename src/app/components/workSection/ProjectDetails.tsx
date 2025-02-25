@@ -12,6 +12,19 @@ export type ProjectProps = {
   
   export const universityProjects = [
     {
+      id: 5,
+      name: "Graduation Project",
+      description:
+        "For my graduation project, I developed a visualisation tool for an organ-on-a-chip model of fibrotic diseases. Using Unity, I created an interactive 3D game to help a general audience in understanding fibrosis progression and organ-on-chip technology. The project involved 3D modelling in Blender, and UI/UX design in Photoshop. Additionally, C# was used for scripting.",
+      technologies: ["Unity", "Blender", "Photoshop", "C#",],
+      // github: "https://github.com/Emma2002/GP_FibOoC_v1",
+      demo: "https://emmavdb2.itch.io/visualisation-tool-for-an-organ-on-a-chip-model-of-fibrotic-diseases",
+      image: require("public/images/Projects/ECMRoom.png"),
+      // video: "/images/Projects/Videos/Module4.mp4",
+      available: true,
+    }, 
+    
+        {
       id: 4,
       name: "Dots and Boxes",
       description:
@@ -40,7 +53,7 @@ export type ProjectProps = {
       id: 2,
       name: "Professional Development Journey",
       description:
-        "At the end of my 2 years of Creative Technology, I had to create a final project. I did it by creating a island about all professional journey of the last two years.",
+        "At the end of my 2 years of Creative Technology, I had to create a final project. I did it by creating a island about all professional journey of the last two years, using Three.js to bring it to life in an 3D environment.",
       technologies: ["ThreeJS", "Blender"],
       demo: "https://emma2002.github.io/ProfDevJourney/",
       image: require("../../../../public/images/Projects/ProfDev.png"),
@@ -62,7 +75,7 @@ export type ProjectProps = {
       id: 0,
       name: "GogBot Installation",
       description:
-        "Project of module 4 OILY MONEY: THE ATM FROM HELL, displayed at the GogBot festival in 2022. This project was created with a total of 8 people.",
+        "Project of module 4 OILY MONEY: THE ATM FROM HELL, displayed at the GogBot festival in 2022. This project was created with a total of 8 people. My role was mostly focused on helping create the visualizations and helping with decorating the ATM itself.",
       technologies: ["Blender", "Processing"],
       // github: "",
       demo: "",
@@ -70,6 +83,8 @@ export type ProjectProps = {
       video: "/images/Projects/Videos/Module4.mp4",
       available: true,
     },  
+
+    
 
    
     // {
@@ -108,18 +123,18 @@ export type ProjectProps = {
   ];
   
   export const otherProjects = [
+  
     {
-      id: 1,
-      name: "Instagram promotion poster S.A. Proto",
+      id: 2,
+      name: "VPRO Hackathon",
       description:
-        "Made for the student association Proto to promote their instagram.",
-      technologies: ["Photoshop"],
+        "In a two-day hackathon, I collaborated with Team NOS on an educational prototype. We came up with a game that teaches primary school students how to fact-check news and recognize reliable sources. My role was designing the UI in Figma.",
+      technologies: ["Figma"],
       // github: "",
-      // demo: "",
-      image: require("../../../../public/images/Projects/ProtoInsta.png"),
+      demo: "https://www.vpro.nl/medialab/projecten/overzicht/hackathon/verslag-publiekepioniers2.html",
+      image: require("../../../../public/images/Projects/VPROHackathon2.png"),
       available: true,
     },
-
     {
       id: 1,
       name: "Game Jam Game",
@@ -129,6 +144,18 @@ export type ProjectProps = {
       // github: "",
       demo: "https://wilkuu.itch.io/affoe-the-heart-attack-game",
       image: require("../../../../public/images/Projects/AffoeGameJam.png"),
+      available: true,
+    },
+  
+    {
+      id: 0,
+      name: "Instagram promotion poster S.A. Proto",
+      description:
+        "Made for the student association Proto to promote their instagram.",
+      technologies: ["Photoshop"],
+      // github: "",
+      // demo: "",
+      image: require("../../../../public/images/Projects/ProtoInsta.png"),
       available: true,
     },
     // {
