@@ -53,7 +53,7 @@ export type ProjectProps = {
       id: 2,
       name: "Professional Development Journey",
       description:
-        "At the end of my 2 years of Creative Technology, I had to create a final project. I did it by creating a island about all professional journey of the last two years, using Three.js to bring it to life in an 3D environment.",
+        "At the end of a two-year Professional Development course in Creative Technology, I created a final project where I designed a 3D island representing my professional journey over the past two years, brought to life using Three.js.",
       technologies: ["ThreeJS", "Blender"],
       demo: "https://emma2002.github.io/ProfDevJourney/",
       image: require("../../../../public/images/Projects/ProfDev.png"),
@@ -63,7 +63,7 @@ export type ProjectProps = {
       id: 3,
       name: "Night At The Arcade",
       description:
-        "Game made in Unity for module 5, toghether with my project partner. During this module I learned about 3D modelling, 3D animation, Sound Engineering, Game Design and Unity, which all contributed to the development of this game where you must escape a haunted arcade by solving puzzles.",
+        "Game made in Unity for Module 5, alongside my project partner. During this module, I learned about 3D modeling, 3D animation, sound engineering, game design, and Unity, all of which contributed to the development of this game. In it, you must escape a haunted arcade by solving puzzles",
       technologies: ["Unity", "Blender", "FMOD"],
       // demo: "https://emma2002.github.io/ProfDevJourney/",
       image: require("../../../../public/images/Projects/Module5_logo.png"),
@@ -128,7 +128,7 @@ export type ProjectProps = {
       id: 2,
       name: "VPRO Hackathon",
       description:
-        "In a two-day hackathon, I collaborated with Team NOS on an educational prototype. We came up with a game that teaches primary school students how to fact-check news and recognize reliable sources. My role was designing the UI in Figma.",
+        "In a two-day hackathon, I collaborated with Team NOS on an educational prototype. We came up with a game that teaches primary school students how to fact-check news and recognize reliable sources. My role was designing the User Interface in Figma.",
       technologies: ["Figma"],
       // github: "",
       demo: "https://www.vpro.nl/medialab/projecten/overzicht/hackathon/verslag-publiekepioniers2.html",
@@ -139,7 +139,7 @@ export type ProjectProps = {
       id: 1,
       name: "Game Jam Game",
       description:
-        "In a GameJam with the theme \"In a heartbeat\" me and two of my teammates created this game.You play as a red blood cell inside a human body. You have 10 heartbeats to prevent the heart from dying. If you use all 10 heartbeats, you will respawn to the start and your heartbeats reset. Try to find a way to finish all quests in the 10 heartbeat limit. ",
+        "In a GameJam with the theme \"In a heartbeat,\" my two teammates and I created this game. You play as a red blood cell inside the human body, and you have 10 heartbeats to prevent the heart from dying. If you use all 10 heartbeats, you will respawn at the start, and your heartbeats will reset. Try to find a way to complete all quests within the 10-heartbeat limit.",
       technologies: ["Unity", "Blender", "Photoshop"],
       // github: "",
       demo: "https://wilkuu.itch.io/affoe-the-heart-attack-game",
@@ -151,7 +151,7 @@ export type ProjectProps = {
       id: 0,
       name: "Instagram promotion poster S.A. Proto",
       description:
-        "Made for the student association Proto to promote their instagram.",
+        "Created for the student association S.A. Proto to help promote their Instagram.",
       technologies: ["Photoshop"],
       // github: "",
       // demo: "",
