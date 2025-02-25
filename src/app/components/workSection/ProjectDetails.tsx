@@ -16,7 +16,7 @@ export type ProjectProps = {
       name: "Graduation Project",
       description:
         "For my graduation project, I developed a visualisation tool for an organ-on-a-chip model of fibrotic diseases. Using Unity, I created an interactive 3D game to help a general audience in understanding fibrosis progression and organ-on-chip technology. The project involved 3D modelling in Blender, and UI/UX design in Photoshop. Additionally, C# was used for scripting.",
-      technologies: ["Unity", "Blender", "Photoshop", "C#",],
+      technologies: ["Unity", "C#","Blender", "Photoshop", ],
       // github: "https://github.com/Emma2002/GP_FibOoC_v1",
       demo: "https://emmavdb2.itch.io/visualisation-tool-for-an-organ-on-a-chip-model-of-fibrotic-diseases",
       image: require("public/images/Projects/ECMRoom.png"),
