@@ -13,6 +13,7 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import "./video.css";
+import "./image.css";
 
 const ProjectCard = ({
   id,
@@ -25,6 +26,7 @@ const ProjectCard = ({
   available,
 }: ProjectProps) => {
   const [modal, setModal] = useState(false);
+  const [zoomedImage, setZoomedImage] = useState(null);
   const [videoLoading, setVideoLoading] = useState(true);
   const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
 
@@ -50,16 +52,17 @@ const ProjectCard = ({
     const handleEscapeKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         closeModal();
+        closeZoomedImage();
       }
     };
 
-    if (modal) {
+    if (modal || zoomedImage) {
       document.addEventListener('keydown', handleEscapeKey);
       return () => {
         document.removeEventListener('keydown', handleEscapeKey);
       };
     }
-  }, [modal]);
+  }, [modal, zoomedImage]);
 
   const closeModal = () => {
     setModal(false);
@@ -70,6 +73,18 @@ const ProjectCard = ({
   const openModal = () => {
     setModal(true);
     document.body.style.overflow = 'hidden';
+  };
+
+  // Function to open zoomed image
+  const openZoomedImage = (imageUrl: string) => {
+    setZoomedImage(imageUrl);
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Function to close zoomed image
+  const closeZoomedImage = () => {
+    setZoomedImage(null);
+    document.body.style.overflow = 'auto';
   };
 
   const handleVideoLoad = () => {
@@ -83,8 +98,14 @@ const ProjectCard = ({
     }
   };
 
-  // Modal component
-  const ModalComponent = () => (
+  // Handle video button click - prevent event bubbling
+  const handleVideoClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    openModal();
+  };
+
+  // Video Modal component
+  const VideoModalComponent = () => (
     <section className="modal__bg" onClick={handleBackgroundClick}>
       <div className="modal__align">
         <div className="modal__content">
@@ -130,20 +151,25 @@ const ProjectCard = ({
         initial="initial"
         animate="animate"
       >
-        <Image
-          src={image}
-          alt={name}
-          layout="responsive"
-          loading="eager"
-          className={`absolute -bottom-2 w-full sm:w-[85%] md:w-[60%] lg:max-w-[55%] rounded-xl overflow-hidden ${
-            id % 2 === 0 ? "right-0" : "left-0"
-          }`}
-        />
+        <div
+          onClick={!video ? () => openZoomedImage(image) : undefined}
+          className={`absolute inset-0 z-10 ${!video ? 'cursor-zoom-in' : 'cursor-default'}`}
+        >
+          <Image
+            src={image}
+            alt={name}
+            layout="responsive"
+            loading="eager"
+            className={`absolute -bottom-2 w-full sm:w-[85%] md:w-[60%] lg:max-w-[55%] rounded-xl overflow-hidden hover:brightness-110 transition-all duration-300 ${
+              id % 2 === 0 ? "right-0" : "left-0"
+            }`}
+          />
+        </div>
 
         {video && (
           <button
-            onClick={openModal}
-            className="focus:outline-none absolute"
+            onClick={handleVideoClick}
+            className="focus:outline-none absolute z-20"
             style={{
               top: "50%",
               left: "50%",
@@ -162,7 +188,7 @@ const ProjectCard = ({
         )}
 
         {demo && (
-          <div className="absolute top-0 text-[#0E1016] left-0 ml-8 lg:ml-14 mt-6 flex items-center justify-center gap-4 lg:mt-10">
+          <div className="absolute top-0 text-[#0E1016] left-0 ml-8 lg:ml-14 mt-6 flex items-center justify-center gap-4 lg:mt-10 z-20">
             <Link
               href={demo}
               target="_blank"
@@ -178,7 +204,7 @@ const ProjectCard = ({
         )}
 
         <div
-          className={`absolute text-white  ${
+          className={`absolute text-white z-20 ${
             !(id % 2 === 0)
               ? "right-0 top-32 mr-0 ml-10 md:right-0 md:ml-0 lg:right-0 lg:top-50  lg:mr-4"
               : "left-10 top-32 ml-0 md:mr-12 lg:top-42 lg:ml-4"
@@ -214,10 +240,26 @@ const ProjectCard = ({
         </div>
       </motion.div>
 
-      {/* Portal Modal - Renders outside of component tree */}
+      {/* Portal Modal for Video */}
       {modal && video && portalRoot && 
-        createPortal(<ModalComponent />, portalRoot)
+        createPortal(<VideoModalComponent />, portalRoot)
       }
+
+      {/* Zoomed Image Modal - Fixed centering */}
+      {zoomedImage && (
+        <div className="zoomed-image-container" onClick={closeZoomedImage}>
+          <div style={{ position: 'relative', maxWidth: '90vw', maxHeight: '90vh' }}>
+            <Image 
+              src={zoomedImage} 
+              alt="zoomed-image"
+              width={1000}
+              height={1000}
+              objectFit="contain"
+              className="zoomed-image"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 };
